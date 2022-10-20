@@ -11,10 +11,13 @@ public class Main {
         subject.addObserver(new WordsObserver(directoryPath));
         subject.addObserver(new VowelsObserver(directoryPath));
         subject.addObserver(new ConsonantsObserver(directoryPath));
+        subject.addObserver(new OppositeObserver(directoryPath));
 
         subject.parseText();
     }
 }
 
-//E:\code\java\DESIGN-PATTERNS-AGH-COURSE\lab1-observator
-//test_file.txt
+/*
+DIRPATH: <your_path>
+FILENAME: test_file.txt
+ */
