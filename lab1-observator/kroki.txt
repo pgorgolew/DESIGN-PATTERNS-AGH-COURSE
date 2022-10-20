@@ -1,0 +1,27 @@
+1) read(file)
+2) read sentence (kropka to koniec zdania)
+    for():
+        read_sentence()
+        c = cont_words()
+        write(c)
+
+        v = count_vowels()
+        write(v)
+
+        s = cont..()
+        write(s)
+
+        ..... -> some additional code
+
+
+Z wzorcem:
+subject -> obiekt obserwowany
+osobne obiekty na liczenie wszystkiego
+
+                                                    Observer (Interface)
+                                                        newSentence
+
+            Subject                 WordsObserver       VObserver           CObserver
+                List<Observer>          newSentence         newSentence         newSentence
+                addObserver
+                removeObserver
