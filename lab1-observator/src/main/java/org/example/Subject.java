@@ -1,17 +1,19 @@
 package org.example;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Subject {
-    private final String filePath;
+    private final Path path;
     private final List<AbstractObserver> observers = new ArrayList<>();
-    public Subject(String filePath) {
-        this.filePath = filePath;
+
+    public Subject(Path filePath) {
+        path = filePath;
     }
 
     public void addObserver(AbstractObserver observer){
@@ -24,18 +26,22 @@ public class Subject {
 
     public void parseText(){
         try {
-            File file = new File(filePath);
-            Scanner myReader = new Scanner(file);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+            Scanner reader = new Scanner(path.toFile());
+            while (reader.hasNextLine()) {
+                String data = reader.nextLine();
                 List<String> sentences = Arrays.asList(data.split("\\."));
-                sentences.forEach(
-                        sentence -> observers.forEach(
-                                observer -> observer.parseNewSentence(sentence)
-                        )
-                );
+
+                sentences.stream()
+                        .filter(s -> Pattern.compile("[a-z]+", Pattern.CASE_INSENSITIVE).matcher(s).find())
+                        .forEach(
+                                sentence -> observers.forEach(
+                                    observer -> observer.parseNewSentence(sentence)
+                                )
+                        );
             }
-            myReader.close();
+
+            reader.close();
+            observers.forEach(AbstractObserver::closeFileWriter);
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

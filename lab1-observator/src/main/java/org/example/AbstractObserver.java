@@ -9,11 +9,12 @@ import java.nio.file.Paths;
 abstract class AbstractObserver {
     Path path;
     FileWriter fileWriter;
-    String observerFilePath;
     String observerFilename;
     String dirPath;
+
     private void createObserverFile(){
         try {
+            Files.deleteIfExists(Paths.get(dirPath, observerFilename));
             path = Files.createFile(Paths.get(dirPath, observerFilename));
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -22,28 +23,35 @@ abstract class AbstractObserver {
 
     private void createFileWriter(){
         try {
-            fileWriter = new FileWriter(observerFilePath);
+            fileWriter = new FileWriter(path.toFile());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    void initializeObserver(){
+    void initializeObserver(String directoryPath){
+        dirPath = directoryPath;
         createObserverFile();
         createFileWriter();
     }
 
     void writeToFile(String sentence){
-        String line = sentence + System.lineSeparator();
         try {
-            fileWriter.write(line);
+            fileWriter.write(sentence + System.lineSeparator());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    void closeFileWriter(){
+        try {
+            fileWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     void parseNewSentence(String sentence) {
-        writeToFile(createNewSentence(sentence));
+        writeToFile(createNewSentence(sentence.replaceAll("\\p{Punct}", "").trim()));
     }
     abstract String createNewSentence(String sentence);
 }
