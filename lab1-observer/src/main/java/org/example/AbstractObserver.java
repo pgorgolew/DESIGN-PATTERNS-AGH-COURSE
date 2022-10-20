@@ -50,8 +50,10 @@ abstract class AbstractObserver {
             throw new RuntimeException(e);
         }
     }
+
     void parseNewSentence(String sentence) {
         writeToFile(createNewSentence(sentence.replaceAll("\\p{Punct}", "").trim()));
     }
+
     abstract String createNewSentence(String sentence);
 }
