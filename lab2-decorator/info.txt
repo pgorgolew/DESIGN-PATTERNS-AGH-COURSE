@@ -1,0 +1,35 @@
+If You see the code structure like this:
+File file = new BufferedReader(new ByteArrayInputStream(new FileInputStream("C:\example.bin");
+it means You see the decorator stack call;
+
+
+
+
+                        COMPONENT<INTERFACE>  --------------------
+                             draw()      ^                        |
+                             ...         | (implements)           |
+                                         |                        |
+      Circle<CLASS>         AbstractDecorator impl component   <>- (have component object inside)
+                               protected Component;
+                                           |
+                                           |
+                                           |
+          Sth1                            Sth2                    Sth3
+
+
+JPanel in Swift might be used
+
+
+Rezultat programu: Rysowanie na srodku figury i buttony z boku (lub jakies menu) zeby zmieniac figurę color itp itd
+
+ Button
+ Button                 FIGURA
+ Button
+ ....
+
+
+ Challenge 1. Your goal is to write software that displays a shape in the window.
+ You can use Swift or another graphical library in Java/JavaScript/Python.
+ User should be able DYNAMICALLY to select: shape, colour and line style by using the buttons (or radio buttons).
+ Possible shapes are: triangle, square, circle. Possible shapes colours are: red, green, and blue.
+ Possible line style: solid, dotted and dashed. Using the decorator design pattern is obligatory.
