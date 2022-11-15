@@ -1,10 +1,9 @@
 package pl.agh.edu.dp;
 
+import pl.agh.edu.dp.gui.MainFrame;
+
 public class AppMain {
     public static void main(String[] args) {
-        Shape shape = new ColorDecorator(new Circle("circle"));
-        shape.draw();
-
-        SwingExample exmpl = new SwingExample();
+        MainFrame mainFrame = new MainFrame();
     }
 }
