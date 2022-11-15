@@ -16,9 +16,9 @@ public class DashedBorderDecorator  extends BasedDecorator {
     }
 
     @Override
-    public Shape draw(Graphics g) {
+    public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(dashed);
-        return shape;
+        shape.draw(g);
     }
 }

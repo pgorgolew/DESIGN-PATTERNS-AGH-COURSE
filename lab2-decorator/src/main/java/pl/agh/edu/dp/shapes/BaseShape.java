@@ -4,7 +4,7 @@ import pl.agh.edu.dp.Shape;
 
 import java.awt.*;
 
-public class BaseShape implements Shape {
+public abstract class BaseShape implements Shape {
     protected int width;
     protected int height;
 

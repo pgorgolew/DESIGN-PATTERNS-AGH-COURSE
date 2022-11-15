@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
     }
 
     private void drawShape(){
-        return;
+        repaint();
     }
     private void createUIComponents() {
         Box buttonsBox = Box.createVerticalBox();

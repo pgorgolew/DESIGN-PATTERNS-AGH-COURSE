@@ -13,5 +13,6 @@ public class GreenColorDecorator extends BasedDecorator {
     @Override
     public void draw(Graphics g) {
         g.setColor(Color.GREEN);
+        shape.draw(g);
     }
 }

@@ -11,8 +11,8 @@ public enum EnumColorsDecorators {
     BLUE,
     GREEN;
 
-    public BasedDecorator getColorDecorator(String color, Shape shape) {
-        return switch (valueOf(color)) {
+    public static Shape getColorDecorator(String color, Shape shape) {
+        return switch (valueOf(color.toUpperCase())) {
             case RED -> new RedColorDecorator(shape);
             case BLUE -> new BlueColorDecorator(shape);
             case GREEN -> new GreenColorDecorator(shape);

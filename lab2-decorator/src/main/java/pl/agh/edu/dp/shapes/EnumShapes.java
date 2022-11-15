@@ -7,8 +7,8 @@ public enum EnumShapes {
     SQUARE,
     TRIANGLE;
 
-    public Shape getShape(String shape) {
-        return switch (valueOf(shape)) {
+    public static BaseShape getShape(String shape) {
+        return switch (valueOf(shape.toUpperCase())) {
             case CIRCLE -> new Circle();
             case SQUARE -> new Square();
             case TRIANGLE -> new Triangle();

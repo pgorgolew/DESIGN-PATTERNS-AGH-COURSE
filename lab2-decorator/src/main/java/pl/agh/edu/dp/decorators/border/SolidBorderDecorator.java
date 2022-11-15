@@ -17,5 +17,6 @@ public class SolidBorderDecorator extends BasedDecorator {
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(solid);
+        shape.draw(g);
     }
 }
