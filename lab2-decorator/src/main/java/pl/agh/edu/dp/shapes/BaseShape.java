@@ -1,7 +1,6 @@
 package pl.agh.edu.dp.shapes;
 
 import pl.agh.edu.dp.Shape;
-
 import java.awt.*;
 
 public abstract class BaseShape implements Shape {

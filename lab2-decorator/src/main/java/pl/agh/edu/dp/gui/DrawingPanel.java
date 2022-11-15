@@ -5,9 +5,7 @@ import pl.agh.edu.dp.decorators.border.EnumBorderDecorator;
 import pl.agh.edu.dp.decorators.color.EnumColorsDecorators;
 import pl.agh.edu.dp.shapes.BaseShape;
 import pl.agh.edu.dp.shapes.EnumShapes;
-
 import javax.swing.*;
-
 import java.awt.Graphics;
 
 public class DrawingPanel extends JPanel {
