@@ -6,10 +6,10 @@ import pl.agh.edu.dp.decorators.BasedDecorator;
 import java.awt.*;
 
 public class DottedBorderDecorator extends BasedDecorator {
-    private final BasicStroke dotted = new BasicStroke(1,
-            BasicStroke.CAP_BUTT,
-            BasicStroke.JOIN_MITER,
-            10.0f, new float[] {1, 2}, 0);
+    private final BasicStroke dotted = new BasicStroke(3,
+            BasicStroke.CAP_ROUND,
+            BasicStroke.JOIN_ROUND,
+            10.0f, new float[] {3, 5}, 0);
 
     public DottedBorderDecorator(Shape shape) {
         this.shape = shape;

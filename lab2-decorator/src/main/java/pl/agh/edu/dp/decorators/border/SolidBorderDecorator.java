@@ -6,9 +6,9 @@ import pl.agh.edu.dp.decorators.BasedDecorator;
 import java.awt.*;
 
 public class SolidBorderDecorator extends BasedDecorator {
-    private final BasicStroke solid = new BasicStroke(1,
-            BasicStroke.CAP_BUTT,
-            BasicStroke.JOIN_MITER);
+    private final BasicStroke solid = new BasicStroke(3,
+            BasicStroke.CAP_ROUND,
+            BasicStroke.JOIN_ROUND);
     public SolidBorderDecorator(Shape shape) {
         this.shape = shape;
     }

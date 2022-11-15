@@ -7,7 +7,6 @@ import pl.agh.edu.dp.shapes.BaseShape;
 import pl.agh.edu.dp.shapes.EnumShapes;
 
 import javax.swing.*;
-import pl.agh.edu.dp.shapes.BaseShape;
 
 import java.awt.Graphics;
 
