@@ -1,0 +1,5 @@
+Abstract Factory is a factory of factories
+
+Used when many dependencies used
+
+Example is not finished but logic should be clear
