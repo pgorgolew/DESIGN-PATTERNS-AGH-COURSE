@@ -1,0 +1,43 @@
+Challenge 1. Please write a peer2peer chat node. It should use a pure TCP socket implementation (no external libraries). It is enough to work only in a local network (no NAT hole punching, etc). The chat should allow to:
+
+1) broadcast messages to all connected nodes,
+
+2) send direct messages (one-to-one) to a specified node (ID of the nodes should be introduced),
+
+3) broadcast information about a new node during a startup,
+
+4) broadcast information about disconnection during a shutdown,
+
+5) command-line interface.
+
+It is obligatory to introduce a facade between the "networking" subsystem and the command-line interface. The facade should handle the following scenarios:
+
+1) introduce the broadcast message,
+
+2) send a one-to-many message,
+
+3) send a one-to-one message,
+
+4) return list of the active nodes,
+
+5) disconnect broadcast message,
+
+6) register "incoming message" listener/observer (to be chosen by students),
+
+7) unregister "incoming messages" listener/observer.
+
+8) restart the TCP socket port.
+
+
+
+
+
+Czat p2p -> w sieci lokalnej bezpośrednie połączenie. Nie używamy serwera przekierowującego
+
+kazdy nowy klient wysyla broadcasta zeby wyslac swoje dane i uzyskac inne dane
+
+po wylaczeniu broadcast ze sie odlacza
+
+uzycie klasycznych socketow bez zadnych bibliotek
+
+fasada ma wykorzystywac wszystkie obiekty a nie implemetowac -> sugerowane są wylistowane
