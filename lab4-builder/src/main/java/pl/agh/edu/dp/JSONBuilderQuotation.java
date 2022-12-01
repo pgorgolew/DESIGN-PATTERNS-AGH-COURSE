@@ -1,4 +1,4 @@
 package pl.agh.edu.dp;
 
-public class JSONBuilderQuotation {
+public class JSONBuilderQuotation implements JSONBuilder{
 }
