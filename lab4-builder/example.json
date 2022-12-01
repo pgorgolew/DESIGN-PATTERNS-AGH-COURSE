@@ -1,0 +1,12 @@
+{
+  "name": "Janusz",
+  "surname": "Kowalski",
+  "age": 25,
+  "subjects_with_grades": {
+    "ASD": 4,
+    "TW": 3.5,
+    "PI": 4.5,
+    "MiAK": 5
+  },
+  "middle_name": "Tomasz"
+}
