@@ -2,6 +2,7 @@ package pl.agh.edu.dp;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import pl.agh.edu.dp.objects.JsonObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,7 +14,7 @@ public class AppMain {
     public static String getJsonContent(String filename) throws IOException {
         String content = Files.readString(Paths.get(filename));
         try {
-            JSONObject jsonObject = new JSONObject(content);
+            new JSONObject(content);
         } catch (JSONException e){
             e.printStackTrace();
             throw new RuntimeException("YOUR JSON IS INVALID!");
@@ -24,7 +25,8 @@ public class AppMain {
     public static void main(String[] args) throws IOException {
         String lines = getJsonContent("example.json");
         Manager manager = new Manager(lines);
-        manager.createJson();
+        JsonObject json = manager.createJson();
+        System.out.println("Just a print to make a breakpoint here");
 
     }
 }

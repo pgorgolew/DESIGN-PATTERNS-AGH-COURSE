@@ -1,11 +1,13 @@
 package pl.agh.edu.dp.objects;
 
-public class FloatObject implements JsonObject {
-    float value;
-
+public record FloatObject(String name, Float value) {
 
     @Override
-    public JsonObject getObject() {
-        return null;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FloatObject that = (FloatObject) o;
+        return name.equals(that.name) && value.equals(that.value);
     }
+
 }
