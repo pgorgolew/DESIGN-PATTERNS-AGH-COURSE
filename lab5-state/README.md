@@ -22,27 +22,27 @@ Run **AppMain** and pass words as program arguments.
 Example output:
 
     =========================
-    Checking word='abcaaaaac'
+    Checking word 'abcaaaaac'
     Result:			false
     States list:		[Start, A, B]
     Productions list:	[aA, bB]
     =========================
-    Checking word='abbbb'
+    Checking word 'abbbb'
     Result:			true
     States list:		[Start, A, B, B, B, B]
     Productions list:	[aA, bB, bB, bB, bB, ε]
     =========================
-    Checking word='bcba'
+    Checking word 'bcba'
     Result:			true
     States list:		[Start, C, B, B, null]
     Productions list:	[bC, cB, bB, a]
     =========================
-    Checking word='d'
+    Checking word 'd'
     Result:			false
     States list:		[Start]
     Productions list:	[]
     =========================
-    Checking word='a'
+    Checking word 'a'
     Result:			true
     States list:		[Start, A]
     Productions list:	[aA, ε]

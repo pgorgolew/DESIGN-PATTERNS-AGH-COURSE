@@ -25,7 +25,6 @@ public class Start implements State{
                 return true;
             }
             default -> {
-                wordChecker.changeState(null);
                 return false;
             }
         }
