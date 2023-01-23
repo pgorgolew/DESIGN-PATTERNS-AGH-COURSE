@@ -2,6 +2,7 @@ package pl.edu.agh.dp;
 
 import org.ejml.simple.SimpleMatrix;
 import pl.edu.agh.dp.operation.*;
+import pl.edu.agh.dp.visitor.Visitor;
 import pl.edu.agh.dp.visitor.VisitorImpl;
 
 import java.util.Random;
@@ -36,7 +37,7 @@ public class Main {
 
         Node subtractNode = graph.add(new SubtractOperation(multiplicationNode, scalarNode2));
 
-        VisitorImpl visitor = new VisitorImpl();
+        Visitor visitor = new VisitorImpl();
         graph.vertices.forEach(v -> {
             try {
                 v.accept(visitor);
